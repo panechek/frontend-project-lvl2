@@ -13,7 +13,7 @@ program
     console.log('{')
     for (let property in result) {
         console.log(property + ':' + result[property])
-    };
+    }
     console.log('}')
   })
 program.parse();

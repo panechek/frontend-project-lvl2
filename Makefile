@@ -1,2 +1,2 @@
 lint:
-	npm link
+	npx eslint .

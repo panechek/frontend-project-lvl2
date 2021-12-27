@@ -1,7 +1,6 @@
 import { readFileSync } from 'fs';
 import getpath from './src/getPath.js';
 import compare from './src/compare.js';
-import  _ from 'lodash';
 
  const genDiff = (filepath1, filepath2) => {
     
