@@ -12,9 +12,9 @@ program
   .action((filepath1, filepath2) => {
     const result = genDiff(filepath1, filepath2);
     console.log('{');
-    for (const [key, value] of Object.entries(result)) {
+    Object.entries(result).forEach(([key, value]) => {
       console.log(`${key} : ${value}`);
-    }
+    });
     console.log('}');
   });
 program.parse();
