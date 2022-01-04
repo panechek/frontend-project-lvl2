@@ -10,31 +10,36 @@ const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
 describe('get path', () => {
-test('relative path', () => {
+  test('relative path', () => {
     const path1 = 'filepath1.json';
-    expect(getPath(path1)).toEqual('/home/panechek/frontend-project-lvl2/__fixtures__/filepath1.json')
-});
+    expect(getPath(path1)).toEqual('/home/panechek/frontend-project-lvl2/__fixtures__/filepath1.json');
+  });
 
-test('absolute path', () => {
+  test('absolute path', () => {
     const path1 = '/home/panechek/frontend-project-lvl2/__fixtures__/filepath2.json';
-    expect(getPath(path1)).toEqual('/home/panechek/frontend-project-lvl2/__fixtures__/filepath2.json')
-});
+    expect(getPath(path1)).toEqual('/home/panechek/frontend-project-lvl2/__fixtures__/filepath2.json');
+  });
 });
 
 describe('get data', () => {
-    const data =  {"follow": false, "host": "hexlet.io", "proxy": "123.234.53.22", "timeout": 50}
-    test('parsers json', () => {
-        expect(parsers('/home/panechek/frontend-project-lvl2/__fixtures__/filepath1.json')).toEqual(data)
-    });
+  const data = {
+    follow: false,
+    host: 'hexlet.io',
+    proxy: '123.234.53.22',
+    timeout: 50,
+  };
+  test('parsers json', () => {
+    expect(parsers('/home/panechek/frontend-project-lvl2/__fixtures__/filepath1.json')).toEqual(data);
+  });
 
-    test('parsers yml', () => {
-        expect(parsers('/home/panechek/frontend-project-lvl2/__fixtures__/filepath1.yml')).toEqual(data)
-    });
+  test('parsers yml', () => {
+    expect(parsers('/home/panechek/frontend-project-lvl2/__fixtures__/filepath1.yml')).toEqual(data);
+  });
 
-    test('parsers yaml', () => {
-        expect(parsers('/home/panechek/frontend-project-lvl2/__fixtures__/filepath.yaml')).toEqual(data)
-    });
-})
+  test('parsers yaml', () => {
+    expect(parsers('/home/panechek/frontend-project-lvl2/__fixtures__/filepath.yaml')).toEqual(data);
+  });
+});
 
 test('compare data', () => {
   const data1 = {
