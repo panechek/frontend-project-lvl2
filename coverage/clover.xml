@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1641214982299" clover="3.2.0">
-  <project timestamp="1641214982299" name="All files">
-    <metrics statements="28" coveredstatements="28" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3" elements="39" coveredelements="39" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
+<coverage generated="1641304113402" clover="3.2.0">
+  <project timestamp="1641304113402" name="All files">
+    <metrics statements="46" coveredstatements="46" conditionals="16" coveredconditionals="15" methods="6" coveredmethods="6" elements="68" coveredelements="67" complexity="0" loc="46" ncloc="46" packages="1" files="4" classes="4"/>
     <file name="compare.js" path="/home/panechek/frontend-project-lvl2/src/compare.js">
       <metrics statements="23" coveredstatements="23" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
       <line num="3" count="1" type="stmt"/>
@@ -28,13 +28,37 @@
       <line num="28" count="2" type="stmt"/>
       <line num="29" count="2" type="stmt"/>
     </file>
+    <file name="getPath.js" path="/home/panechek/frontend-project-lvl2/src/getPath.js">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="3" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+    </file>
     <file name="index.js" path="/home/panechek/frontend-project-lvl2/src/index.js">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="5" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
       <line num="8" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+    <file name="parsers.js" path="/home/panechek/frontend-project-lvl2/src/parsers.js">
+      <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="8" count="5" type="stmt"/>
+      <line num="10" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="2" type="cond" truecount="3" falsecount="1"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
     </file>
   </project>
 </coverage>
