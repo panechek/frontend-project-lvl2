@@ -8,3 +8,4 @@
 [![build-project ](https://github.com/panechek/frontend-project-lvl2//workflows/lint-project/badge.svg)](https://github.com/panechek/frontend-project-lvl2/actions)
 
  https://asciinema.org/a/Nd2hBW3HpUwlacuAPoomy5u0h
+ https://asciinema.org/a/fGqIJOwUR2sLaVn76bMvbhloP
