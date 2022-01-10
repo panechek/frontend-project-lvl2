@@ -67,6 +67,13 @@ describe('gendiff', () => {
     expect(genDiff(file1, file2)).toEqual(file3);
   });
 
+  test('stylish type default hexlet', () => {
+    const file3 = getFixturePath('file3.json');
+    const file4 = getFixturePath('file4.json');
+    const file5 = fs.readFileSync(getFixturePath('resultHexlet.txt'), 'utf-8');
+    expect(genDiff(file3, file4)).toEqual(file5);
+  });
+
   test('stylish type', () => {
     const file3 = fs.readFileSync(getFixturePath('resultStylish.txt'), 'utf-8');
     expect(genDiff(file1, file2, 'stylish')).toEqual(file3);

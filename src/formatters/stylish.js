@@ -23,7 +23,7 @@ const stylish = (data, replacer = '  ', spacesCount = 1) => {
       } else if (currentValue.change === 'remove') {
         lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
       } else if (currentValue.change === 'upgrade') {
-        lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value.oldProperty, depth + 2)}\n${currentIndent}+ ${currentValue.name}: ${iter(currentValue.value.newProperty, depth)}`;
+        lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value.oldProperty, depth + 2)}\n${currentIndent}+ ${currentValue.name}: ${iter(currentValue.value.newProperty, depth + 2)}`;
       } else {
         lines = `${currentIndent}  ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
       }
