@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1641823711072" clover="3.2.0">
-  <project timestamp="1641823711073" name="All files">
-    <metrics statements="110" coveredstatements="110" conditionals="66" coveredconditionals="63" methods="17" coveredmethods="17" elements="193" coveredelements="190" complexity="0" loc="110" ncloc="110" packages="2" files="8" classes="8"/>
+<coverage generated="1641835965823" clover="3.2.0">
+  <project timestamp="1641835965823" name="All files">
+    <metrics statements="111" coveredstatements="110" conditionals="66" coveredconditionals="63" methods="17" coveredmethods="17" elements="194" coveredelements="190" complexity="0" loc="111" ncloc="111" packages="2" files="8" classes="8"/>
     <package name="src">
-      <metrics statements="40" coveredstatements="40" conditionals="21" coveredconditionals="20" methods="7" coveredmethods="7"/>
+      <metrics statements="41" coveredstatements="40" conditionals="21" coveredconditionals="20" methods="7" coveredmethods="7"/>
       <file name="compare.js" path="/home/panechek/frontend-project-lvl2/src/compare.js">
         <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="12" methods="3" coveredmethods="3"/>
         <line num="3" count="1" type="stmt"/>
@@ -46,7 +46,7 @@
         <line num="12" count="5" type="stmt"/>
       </file>
       <file name="parsers.js" path="/home/panechek/frontend-project-lvl2/src/parsers.js">
-        <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <metrics statements="9" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="13" type="stmt"/>
         <line num="8" count="13" type="stmt"/>
@@ -54,7 +54,8 @@
         <line num="11" count="6" type="stmt"/>
         <line num="12" count="7" type="cond" truecount="3" falsecount="1"/>
         <line num="13" count="7" type="stmt"/>
-        <line num="15" count="13" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
       </file>
     </package>
     <package name="src.formatters">
