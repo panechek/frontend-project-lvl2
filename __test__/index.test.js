@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import * as path from 'path';
-import genDiff from '../index.js';
+import genDiff from '../src/index.js';
 import compare from '../src/compare.js';
 import getPath from '../src/getPath.js';
 import parsers from '../src/parsers.js';
