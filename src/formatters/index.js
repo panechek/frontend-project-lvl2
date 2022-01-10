@@ -3,17 +3,16 @@ import plain from './plain.js';
 import json from './json.js';
 
 const formatters = (data, formatName) => {
-  let form;
   if (formatName === 'stylish') {
-    form = stylish;
-  } else if (formatName === 'plain') {
-    form = plain;
-  } else if (formatName === 'json') {
-    form = json;
-  } else {
-    throw Error(`Unknown format name: ${formatName}`);
+    return stylish(data);
   }
-  return form(data);
+  if (formatName === 'plain') {
+    return plain(data);
+  }
+  if (formatName === 'json') {
+    return json(data);
+  }
+  throw Error(`Unknown format name: ${formatName}`);
 };
 
 export default formatters;

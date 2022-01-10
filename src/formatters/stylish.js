@@ -17,16 +17,25 @@ const stylish = (data, replacer = '  ', spacesCount = 1) => {
       ].join('\n');
     }
     if (Object.keys(currentValue).includes('name')) {
-      let lines;
       if (currentValue.change === 'add') {
-        lines = `${currentIndent}+ ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
-      } else if (currentValue.change === 'remove') {
-        lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
-      } else if (currentValue.change === 'upgrade') {
-        lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value.oldProperty, depth + 2)}\n${currentIndent}+ ${currentValue.name}: ${iter(currentValue.value.newProperty, depth + 2)}`;
-      } else {
-        lines = `${currentIndent}  ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
+        const lines = `${currentIndent}+ ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
+        return [
+          lines,
+        ].join('');
       }
+      if (currentValue.change === 'remove') {
+        const lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
+        return [
+          lines,
+        ].join('');
+      }
+      if (currentValue.change === 'upgrade') {
+        const lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value.oldProperty, depth + 2)}\n${currentIndent}+ ${currentValue.name}: ${iter(currentValue.value.newProperty, depth + 2)}`;
+        return [
+          lines,
+        ].join('');
+      }
+      const lines = `${currentIndent}  ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
       return [
         lines,
       ].join('');
