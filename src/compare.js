@@ -12,12 +12,12 @@ const compare = (data1, data2) => {
         const children = compare(data1[key], data2[key]);
         acc = { name: key, value: children, change: ' ' };
       } else {
-        acc = [{ name: key, value: data1[key], change: '-' }, { name: key, value: data2[key], change: '+' }];
+        acc = [{ name: key, value: { oldProperty: data1[key], newProperty: data2[key] }, change: 'upgrade' }];
       }
     } else if (_.has(data1, key)) {
-      acc = { name: key, value: data1[key], change: '-' };
+      acc = { name: key, value: data1[key], change: 'remove' };
     } else {
-      acc = { name: key, value: data2[key], change: '+' };
+      acc = { name: key, value: data2[key], change: 'add' };
     }
     return acc;
   };

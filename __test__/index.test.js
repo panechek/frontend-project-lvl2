@@ -57,17 +57,22 @@ describe('compare data', () => {
       verbose: true,
       host: 'hexlet.io',
     };
-    expect(compare(data1, data2)).toEqual([{ change: '-', name: 'follow', value: false }, { change: ' ', name: 'host', value: 'hexlet.io' }, { change: '-', name: 'proxy', value: '123.234.53.22' }, { change: '-', name: 'timeout', value: 50 }, { change: '+', name: 'timeout', value: 20 }, { change: '+', name: 'verbose', value: true }]);
+    expect(compare(data1, data2)).toEqual([{ change: 'remove', name: 'follow', value: false }, { change: ' ', name: 'host', value: 'hexlet.io' }, { change: 'remove', name: 'proxy', value: '123.234.53.22' }, { change: 'upgrade', name: 'timeout', value: { newProperty: 20, oldProperty: 50 } }, { change: 'add', name: 'verbose', value: true }]);
   });
 });
 
 describe('gendiff', () => {
-  test('right type', () => {
+  test('stylish type', () => {
     const file3 = fs.readFileSync(getFixturePath('result.txt'), 'utf-8');
     expect(genDiff(file1, file2)).toEqual(file3);
   });
 
+  test('plain type', () => {
+    const file3 = fs.readFileSync(getFixturePath('resultPlain.txt'), 'utf-8');
+    expect(genDiff(file1, file2, 'plain')).toEqual(file3);
+  });
+
   test('errow type', () => {
-    expect(genDiff(file1, file2, 'jkl')).toEqual('Неизвестный формат');
+    expect(() => { genDiff(file1, file2, 'jkl'); }).toThrowError(new Error('Unknown format name: jkl'));
   });
 });
