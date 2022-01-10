@@ -62,9 +62,14 @@ describe('compare data', () => {
 });
 
 describe('gendiff', () => {
-  test('stylish type', () => {
+  test('stylish type default', () => {
     const file3 = fs.readFileSync(getFixturePath('resultStylish.txt'), 'utf-8');
     expect(genDiff(file1, file2)).toEqual(file3);
+  });
+
+  test('stylish type', () => {
+    const file3 = fs.readFileSync(getFixturePath('resultStylish.txt'), 'utf-8');
+    expect(genDiff(file1, file2, 'stylish')).toEqual(file3);
   });
 
   test('plain type', () => {
