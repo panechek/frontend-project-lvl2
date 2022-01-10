@@ -20,10 +20,10 @@ make test
 ```
 
 ### Stylish format
-[![asciicast]( https://asciinema.org/a/IE0NfeIxSilzDMNIl9Nfu9P1i)
+[![asciicast](https://asciinema.org/a/IE0NfeIxSilzDMNIl9Nfu9P1i)](https://asciinema.org/a/IE0NfeIxSilzDMNIl9Nfu9P1i)
 
 ### Plain format
-[![asciicast](https://asciinema.org/a/bD403J8HKKiCi0wqETjtyv3m6)
+[![asciicast](https://asciinema.org/a/bD403J8HKKiCi0wqETjtyv3m6)](https://asciinema.org/a/bD403J8HKKiCi0wqETjtyv3m6)
 
 ### Json format
-[![asciicast]( https://asciinema.org/a/Xy08yNJLuk7zqpTQRJVsvD0z9)
+[![asciicast](https://asciinema.org/a/Xy08yNJLuk7zqpTQRJVsvD0z9)](https://asciinema.org/a/Xy08yNJLuk7zqpTQRJVsvD0z9)
