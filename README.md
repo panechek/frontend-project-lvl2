@@ -26,4 +26,4 @@ make test
 [![asciicast](https://asciinema.org/a/bD403J8HKKiCi0wqETjtyv3m6)](https://asciinema.org/a/bD403J8HKKiCi0wqETjtyv3m6)
 
 ### Json format
-[![asciicast](https://asciinema.org/a/Xy08yNJLuk7zqpTQRJVsvD0z9)](https://asciinema.org/a/Xy08yNJLuk7zqpTQRJVsvD0z9)
+[![asciicast](https://asciinema.org/connect/5878a37b-09ef-48a8-af28-b75414ae11db)](https://asciinema.org/connect/5878a37b-09ef-48a8-af28-b75414ae11db)
