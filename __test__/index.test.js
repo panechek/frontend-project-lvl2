@@ -84,6 +84,13 @@ describe('gendiff', () => {
     expect(genDiff(file1, file2, 'plain')).toEqual(file3);
   });
 
+  test('plain type hexlet', () => {
+    const file3 = getFixturePath('file3.json');
+    const file4 = getFixturePath('file4.json');
+    const file5 = fs.readFileSync(getFixturePath('resultHexletPlain.txt'), 'utf-8');
+    expect(genDiff(file3, file4, 'plain')).toEqual(file5);
+  });
+
   test('json type', () => {
     const file3 = fs.readFileSync(getFixturePath('resultJson.txt'), 'utf-8');
     expect(genDiff(file1, file2, 'json')).toEqual(file3);

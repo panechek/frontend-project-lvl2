@@ -1,6 +1,6 @@
 const plain = (data) => {
   const valueType = (val) => {
-    if (val === null || val === undefined || typeof val === 'boolean') {
+    if (val === null || val === undefined || typeof val === 'boolean' || typeof val === 'number') {
       return val;
     }
     if (typeof val !== 'object') {
