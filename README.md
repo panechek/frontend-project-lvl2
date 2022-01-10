@@ -7,6 +7,23 @@
 
 [![build-project ](https://github.com/panechek/frontend-project-lvl2//workflows/lint-project/badge.svg)](https://github.com/panechek/frontend-project-lvl2/actions)
 
-<p>https://asciinema.org/a/Nd2hBW3HpUwlacuAPoomy5u0h</p>
-<p>https://asciinema.org/a/fGqIJOwUR2sLaVn76bMvbhloP</p>
-<p>https://asciinema.org/a/YPTf2deoKpUdaYDaF0elvVtcw</p>
+## Setup
+
+```sh
+make install
+```
+
+### Run tests
+
+```sh
+make test
+```
+
+### Stylish format
+[![asciicast]( https://asciinema.org/a/IE0NfeIxSilzDMNIl9Nfu9P1i)
+
+### Plain format
+[![asciicast](https://asciinema.org/a/bD403J8HKKiCi0wqETjtyv3m6)
+
+### Json format
+[![asciicast]( https://asciinema.org/a/Xy08yNJLuk7zqpTQRJVsvD0z9)

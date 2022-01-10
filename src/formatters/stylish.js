@@ -25,7 +25,7 @@ const stylish = (data, replacer = '  ', spacesCount = 1) => {
       } else if (currentValue.change === 'upgrade') {
         lines = `${currentIndent}- ${currentValue.name}: ${iter(currentValue.value.oldProperty, depth + 2)}\n${currentIndent}+ ${currentValue.name}: ${iter(currentValue.value.newProperty, depth)}`;
       } else {
-        lines = `${currentIndent}${currentValue.change} ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
+        lines = `${currentIndent}  ${currentValue.name}: ${iter(currentValue.value, depth + 2)}`;
       }
       return [
         lines,

@@ -57,19 +57,24 @@ describe('compare data', () => {
       verbose: true,
       host: 'hexlet.io',
     };
-    expect(compare(data1, data2)).toEqual([{ change: 'remove', name: 'follow', value: false }, { change: ' ', name: 'host', value: 'hexlet.io' }, { change: 'remove', name: 'proxy', value: '123.234.53.22' }, { change: 'upgrade', name: 'timeout', value: { newProperty: 20, oldProperty: 50 } }, { change: 'add', name: 'verbose', value: true }]);
+    expect(compare(data1, data2)).toEqual([{ change: 'remove', name: 'follow', value: false }, { change: 'fix', name: 'host', value: 'hexlet.io' }, { change: 'remove', name: 'proxy', value: '123.234.53.22' }, { change: 'upgrade', name: 'timeout', value: { newProperty: 20, oldProperty: 50 } }, { change: 'add', name: 'verbose', value: true }]);
   });
 });
 
 describe('gendiff', () => {
   test('stylish type', () => {
-    const file3 = fs.readFileSync(getFixturePath('result.txt'), 'utf-8');
+    const file3 = fs.readFileSync(getFixturePath('resultStylish.txt'), 'utf-8');
     expect(genDiff(file1, file2)).toEqual(file3);
   });
 
   test('plain type', () => {
     const file3 = fs.readFileSync(getFixturePath('resultPlain.txt'), 'utf-8');
     expect(genDiff(file1, file2, 'plain')).toEqual(file3);
+  });
+
+  test('json type', () => {
+    const file3 = fs.readFileSync(getFixturePath('resultJson.txt'), 'utf-8');
+    expect(genDiff(file1, file2, 'json')).toEqual(file3);
   });
 
   test('errow type', () => {

@@ -24,7 +24,7 @@ const plain = (data) => {
         const value2 = valueType(currentValue.value.newProperty);
         currentName += currentValue.name;
         str = `Property '${currentName}' was updated. From ${value1} to ${value2}`;
-      } else if (currentValue.change === ' ') {
+      } else if (currentValue.change === 'fix') {
         currentName += currentValue.name;
         if (valueType(currentValue.value) === '[complex value]') {
           str = done(currentValue.value, `${currentName}.`);
