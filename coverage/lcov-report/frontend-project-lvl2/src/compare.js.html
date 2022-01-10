@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/23</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/23</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -91,70 +91,58 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">77x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">77x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">77x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import _ from 'lodash';
 &nbsp;
 const compare = (data1, data2) =&gt; {
-  const keys = _.union(Object.keys(data1), Object.keys(data2));
+  const keys = _.union(Object.keys(data1).sort(), Object.keys(data2).sort());
   keys.sort();
-  const newObj = (acc, key) =&gt; {
+  const newObj = (key) =&gt; {
+    let acc;
     if (_.has(data1, key) &amp;&amp; _.has(data2, key)) {
       if (data1[key] === data2[key]) {
-        const key1 = ['  ', key].join('');
-        acc[key1] = data1[key];
-        return acc;
+        acc = { name: key, value: data1[key], change: 'fix' };
+      } else if (typeof data1[key] === 'object' &amp;&amp; typeof data2[key] === 'object') {
+        const children = compare(data1[key], data2[key]);
+        acc = { name: key, value: children, change: 'fix' };
+      } else {
+        acc = [{ name: key, value: { oldProperty: data1[key], newProperty: data2[key] }, change: 'upgrade' }];
       }
-      const key1 = ['- ', key].join('');
-      const key2 = ['+ ', key].join('');
-      acc[key1] = data1[key];
-      acc[key2] = data2[key];
-      return acc;
+    } else if (_.has(data1, key)) {
+      acc = { name: key, value: data1[key], change: 'remove' };
+    } else {
+      acc = { name: key, value: data2[key], change: 'add' };
     }
-    if (_.has(data1, key)) {
-      const key1 = ['- ', key].join('');
-      acc[key1] = data1[key];
-      return acc;
-    }
-    const key1 = ['- ', key].join('');
-    acc[key1] = data2[key];
     return acc;
   };
-  const object = keys.reduce(newObj, {});
+  const object = keys.flatMap((key) =&gt; newObj(key));
   return object;
 };
 &nbsp;
@@ -166,7 +154,7 @@ export default compare;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Mon Jan 03 2022 15:16:06 GMT+0300 (Moscow Standard Time)
+                at Mon Jan 10 2022 16:29:55 GMT+0300 (Moscow Standard Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
