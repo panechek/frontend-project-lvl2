@@ -20,7 +20,7 @@ make test
 ```
 
 ### Stylish format
-[![asciicast](https://asciinema.org/a/3xtS8KU8VEDx1KWonjdd3e8Sx)](https://asciinema.org/a/3xtS8KU8VEDx1KWonjdd3e8Sx)
+[![asciicast:](https://asciinema.org/a/3xtS8KU8VEDx1KWonjdd3e8Sx)](https://asciinema.org/a/3xtS8KU8VEDx1KWonjdd3e8Sx)
 
 ### Stylish format for nested
 [![asciicast](https://asciinema.org/a/IE0NfeIxSilzDMNIl9Nfu9P1i)](https://asciinema.org/a/IE0NfeIxSilzDMNIl9Nfu9P1i)
